@@ -1,58 +1,151 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Ashley</title>
-    <link rel="stylesheet" type="text/css" href="/style.css" />
-    <link rel="shortcut icon" href="https://cdn.glitch.com/6713522c-ff2f-4788-b553-a77acb1ec74a/ashleypfp.png"/>
-     <meta content="#ffacbb" name="theme-color"/>
-    <meta content="Ashley's Personal site" property="og:title">
-     <meta content="Google services require
-running nonfree Javascript code. And thats bad" property="twitter:description">
-    <meta content="https://cdn.glitch.com/6713522c-ff2f-4788-b553-a77acb1ec74a/ashleypfp.png" property="og:image">
-     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Sigmar+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-         <style>
-      h1,h2,h3,h4,h5{
-        font-family:Inter,sans-serif;
-      }
-      a,div,p{
-        font-family:Roboto,sans-serif;
-      }
-      :visited { color: #00c0ff }
-    </style>
-  </head>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ashley's Opinion – Google Services</title>
+  <link rel="shortcut icon" href="https://cdn.glitch.com/6713522c-ff2f-4788-b553-a77acb1ec74a/ashleypfp.png">
+  <meta name="theme-color" content="#ffacbb"/>
+  
+  <meta property="og:title" content="Ashley's Opinion – Google Services">
+  <meta name="twitter:description" content="A look at the trade-offs between Google's convenience and software freedom.">
+  <meta property="og:image" content="https://cdn.glitch.com/6713522c-ff2f-4788-b553-a77acb1ec74a/ashleypfp.png">
+  
+  <link href="https://fonts.bunny.net/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+  <link href="https://fonts.bunny.net/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Consistent Theme */
+      --bg-gradient: linear-gradient(135deg, #ff9ec4 0%, #ffa8c5 50%, #ffd1dc 100%);
+      --card-bg: rgba(255,255,255,0.9);
+      --text: #333;
+      --accent: #ff69b4;
+      --shadow: rgba(0,0,0,0.15);
+      --radius: 16px;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--bg-gradient) fixed center/cover;
+      color: var(--text);
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem;
+    }
+    
+    .container {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 24px var(--shadow);
+      max-width: 800px; width: 100%; padding: 2rem;
+    }
+    
+    .header-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
 
-  <body style="min-width: 678px">
-    <center>
-      <img src="https://cdn.glitch.global/6713522c-ff2f-4788-b553-a77acb1ec74a/ashleypfp.png" height="200"  />
-      <h3 class="c1">Ashley's Personal site -  Reasons not to use google</h3>
-      <a href="https://tosdr.org/en/service/217">
-      <img src="https://shields.tosdr.org/en_217.svg"/>
-      </a><br>
-      <a href="/opinion">Go back</a>
-      <hr />
-      <p>
-        Do not use google.       
-In general, most Google services require
-running nonfree Javascript code If you refuse to run that (for instance,
-by running LibreJS), you'll see that you should not use those
-services. <br> <br> Google stores a list of all purchases a user has made that in any way mention the user's a gmail account. A user can delete purchases from this list, but only one purchase at a time. Then that purchase disappears from the list that the user sees. Whether it remains in another list, we do not know, but I'd expect Google to answer that question with doubletalk. 
-      </p>
-      <p>
-        Google censored installation of Samsung's <a href="http://www.theguardian.com/media/2016/feb/03/google-pulls-ad-blocking-app-for-samsung-phones">ad-blocker,</a> saying that blocking ads is "interference" with the sites that advertise (and surveil users through ads).
-      </p>
-<p>The ad-blocker is proprietary software, just like the program
-(Google Play) that Google used to deny access to install it.  I would
-refuse to have either of them on my
-computer.  <a href="http://gnu.org/philosophy/free-software-even-more-important.html">Using
-a nonfree program</a> gives the owner power over you, and Google has
-exercised that power.
-      </p>
-      <hr>
-      <a href="https://github.com/ashley0143">Github</a> - <a href="https://discord.com/users/396571938081865741">Discord</a> - <a href="https://www.reddit.com/user/Ash_Potter">Reddit</a><br>
-      <p>i got inspired by https://stallman.org/ while making this site. This website does not track you. No cookies. No data collection. 100% handcrafted without JavaScript. <br>Permission is granted to copy, distribute and/or modify this document
-        under the terms of the <a href="http://www.gnu.org/licenses/fdl.txt">GNU Free Documentation License</a></p>
-    </center>
-  </body>
+    .pfp {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid var(--accent);
+    }
+
+    h1 { font-family: 'Inter', sans-serif; font-size: 2rem; margin-bottom: 0.5rem; color: var(--accent); }
+    
+    a.back { text-decoration: none; color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem; display: inline-block; font-weight: 500;}
+    
+    article { margin-top: 1rem; line-height: 1.6; }
+    section { margin-bottom: 1.5rem; }
+    
+    h2 { font-family: 'Inter', sans-serif; font-size: 1.4rem; margin-bottom: 0.5rem; }
+    p { margin-bottom: 0.75rem; }
+    
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent); }
+    a:hover { border-bottom: 1px solid var(--accent); }
+
+    .badge-container {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+        align-items: center;
+    }
+    
+    .badge-container img {
+        height: 30px;
+    }
+
+    footer { 
+        margin-top: 2rem; 
+        font-size: 0.85rem; 
+        text-align: center; 
+        border-top: 1px solid rgba(0,0,0,0.1);
+        padding-top: 1rem;
+    }
+    
+    .footer-links { margin-bottom: 0.5rem; }
+    .footer-links a { margin: 0 5px; font-weight: bold; }
+    .license { font-size: 0.75rem; opacity: 0.7; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/opinion" class="back">← Back to Opinions</a>
+    
+    <div class="header-meta">
+        <img src="https://cdn.glitch.global/6713522c-ff2f-4788-b553-a77acb1ec74a/ashleypfp.png" class="pfp" alt="Ashley PFP">
+        <div>
+            <h1>Google: The Privacy Trade-off</h1>
+            <p style="font-size: 0.9rem; margin:0; opacity: 0.8;">Convenience comes at a cost</p>
+        </div>
+    </div>
+
+    <article>
+      <section>
+        <h2>1. Non-Free JavaScript & Control</h2>
+        <div class="badge-container">
+             <a href="https://tosdr.org/en/service/217"><img src="https://shields.tosdr.org/en_217.svg" alt="Terms of Service; Didn't Read"/></a>
+        </div>
+        <p>Most Google services require running non-free JavaScript code. From a software freedom perspective (like <a href="http://gnu.org/philosophy/free-software-even-more-important.html">LibreJS</a> users), this effectively locks out anyone attempting to run a strictly open-source browser environment.</p>
+        <p>While this enables rich web apps, it forces users to execute proprietary code they cannot audit just to access basic services.</p>
+      </section>
+
+      <section>
+        <h2>2. Data Aggregation</h2>
+        <p>It is important to be aware of how much data is centralized. For example, purchase receipts sent to a Gmail account are often indexed into a "Purchases" list.</p>
+        <p>While you can delete these entries, the process is often manual and slow. It raises the question of whether this data is merely hidden from your view or actually purged from their internal modeling.</p>
+      </section>
+
+      <section>
+        <h2>3. The Walled Garden</h2>
+        <p>Google has historically exercised significant control over its ecosystem. For instance, they have previously <a href="http://www.theguardian.com/media/2016/feb/03/google-pulls-ad-blocking-app-for-samsung-phones">removed ad-blockers</a> from the Play Store, citing interference with other services.</p>
+        <p>Using a proprietary app store gives the owner power over what software you are allowed to run on your own device. It's a trade-off: you get security and curation, but you lose the freedom to install whatever you want without "permission."</p>
+      </section>
+
+      <section>
+        <h2>4. My Take</h2>
+        <p>Google services are incredibly useful and often superior in quality, which is why most of us (including me) still use them. However, it's healthy to remain aware of the privacy costs and to diversify your digital toolkit where possible.</p>
+      </section>
+    </article>
+
+    <footer>
+      <div class="footer-links">
+        <a href="https://github.com/ashley0143">Github</a> • 
+        <a href="https://discord.com/users/396571938081865741">Discord</a> • 
+        <a href="https://www.reddit.com/user/Ash_Potter">Reddit</a>
+      </div>
+      <div class="license">
+        <p>Inspired by <a href="https://stallman.org/">stallman.org</a>. This website does not track you. No cookies. No data collection.</p>
+        <p>Permission is granted to copy, distribute and/or modify this document under the terms of the <a href="http://www.gnu.org/licenses/fdl.txt">GNU Free Documentation License</a>.</p>
+      </div>
+    </footer>
+  </div>
+</body>
 </html>
