@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ashley’s Opinion – Concerns with Uutils</title>
+  <title>Ashley’s Opinion – Thoughts on Uutils</title>
   <link rel="shortcut icon" href="https://cdn.glitch.com/6713522c-ff2f-4788-b553-a77acb1ec74a/ashleypfp.png">
-  <meta property="og:title" content="Ashley’s Opinion – Concerns with Uutils">
-  <meta name="twitter:description" content="Why Uutils bad">
-  <meta property="og:image" content="https://cdn.glitch.com/6713522c-ff2f-4788-b553-a77acb1ec74a/ashleysitebanner.jpg">
+  
+  <meta property="og:title" content="Ashley’s Opinion – Thoughts on Uutils">
+  <meta name="twitter:description" content="A critique of Rust Coreutils vs GNU Coreutils.">
+  <meta property="og:image" content="https://cdn.glitch.com/6713522c-ff2f-4788-b553-a77acb1ec74a/ashleypfp.png">
   <meta name="twitter:card" content="summary_large_image">
+  
   <link href="https://fonts.bunny.net/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
   <link href="https://fonts.bunny.net/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  
   <style>
     :root {
       --bg-gradient: linear-gradient(135deg, #ff9ec4 0%, #ffa8c5 50%, #ffd1dc 100%);
@@ -20,7 +23,9 @@
       --shadow: rgba(0,0,0,0.15);
       --radius: 16px;
     }
+    
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    
     body {
       font-family: 'Roboto', sans-serif;
       background: var(--bg-gradient) fixed center/cover;
@@ -29,6 +34,7 @@
       display: flex; align-items: center; justify-content: center;
       padding: 1rem;
     }
+    
     .container {
       background: var(--card-bg);
       backdrop-filter: blur(10px);
@@ -36,57 +42,105 @@
       box-shadow: 0 8px 24px var(--shadow);
       max-width: 800px; width: 100%; padding: 2rem;
     }
-    h1 { font-family: 'Inter', sans-serif; font-size: 2rem; margin-bottom: 1rem; color: var(--accent); }
-    a.back { text-decoration: none; color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem; display: inline-block; }
+    
+    .header-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .pfp {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid var(--accent);
+    }
+    
+    h1 { font-family: 'Inter', sans-serif; font-size: 2rem; margin-bottom: 0.5rem; color: var(--accent); }
+    
+    a.back { text-decoration: none; color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem; display: inline-block; font-weight: 500;}
+    
     article { margin-top: 1rem; line-height: 1.6; }
     section { margin-bottom: 1.5rem; }
+    
     h2 { font-family: 'Inter', sans-serif; font-size: 1.4rem; margin-bottom: 0.5rem; }
     p { margin-bottom: 0.75rem; }
-    .sources ul { list-style: none; padding-left: 1.2rem; }
+    
+    .sources ul { list-style: none; padding-left: 0; }
     .sources li { margin-bottom: 0.5rem; }
     .sources a { color: var(--accent); text-decoration: underline; }
-    footer { margin-top: 2rem; font-size: 0.85rem; text-align: center; }
-    footer a { color: var(--accent); text-decoration: none; }
+    
+    footer { 
+        margin-top: 2rem; 
+        font-size: 0.85rem; 
+        text-align: center; 
+        border-top: 1px solid rgba(0,0,0,0.1);
+        padding-top: 1rem;
+    }
+    
+    .footer-links { margin-bottom: 0.5rem; }
+    .footer-links a { margin: 0 5px; font-weight: bold; color: var(--accent); text-decoration: none;}
+    .license { font-size: 0.75rem; opacity: 0.7; }
   </style>
 </head>
 <body>
   <div class="container">
     <a href="/opinion" class="back">← Back to Opinions</a>
-    <h1>Concerns with Uutils despite Rust performance</h1>
+    
+    <div class="header-meta">
+        <img src="https://cdn.glitch.com/6713522c-ff2f-4788-b553-a77acb1ec74a/ashleypfp.png" class="pfp" alt="Ashley PFP">
+        <div>
+            <h1>The State of Uutils (Rust Coreutils)</h1>
+            <p style="font-size: 0.9rem; margin:0; opacity: 0.8;">Cool tech, but is it ready?</p>
+        </div>
+    </div>
+
     <article>
       <section>
-        <h2>1. Incomplete POSIX Compatibility</h2>
-        <p>Many Uutils commands implement only a subset of GNU coreutils flags. Scripts relying on extended flags (e.g., <code>ls --classify</code>, <code>sed -z</code>, or advanced <code>stat</code> syntax) will fail or produce incorrect output.</p>
+        <h2>1. The "Long Tail" of Compatibility</h2>
+        <p>While Uutils covers the most common use cases perfectly, GNU Coreutils has 30 years of edge-case handling. Uutils is still working to pass the full GNU test suite.</p>
+        <p>Scripts that rely on obscure, undocumented, or legacy behaviors of GNU tools (like specific <code>cp</code> attribute preservation or complex <code>sort</code> keys) may break when switched to Uutils unexpectedly.</p>
       </section>
+
       <section>
-        <h2>2. Binary Size & Runtime Dependencies</h2>
-        <p>Rust-built binaries are often tens of megabytes larger than their C counterparts and require <code>libssl</code> and other shared libraries. On minimal containers or embedded devices, this bloat increases attack surface and complicates secure deployments.</p>
+        <h2>2. Binary Size</h2>
+        <p>Rust binaries are statically linked by default, meaning they include their dependencies. A standard GNU <code>ls</code> might be 150KB (dynamically linked to glibc), whereas a Rust equivalent can be significantly larger.</p>
+        <p>While Uutils offers a "multicall binary" (like BusyBox) to mitigate this, on extremely constrained embedded systems where every kilobyte counts, C implementations still have the edge.</p>
       </section>
+
       <section>
-        <h2>3. Inconsistent Output Formatting</h2>
-        <p>Output differences—such as missing locale-aware sorting in <code>sort</code> or altered timestamp formats in <code>ls -l</code>—break downstream tooling and parsers that assume GNU-style output, causing subtle automation failures.</p>
+        <h2>3. Missing Features (SELinux/ACLs)</h2>
+        <p>Full support for advanced filesystem features like SELinux contexts or complicated Access Control Lists (ACLs) is often more mature in the GNU upstream.</p>
+        <p>If you are managing a hardened security environment (like Fedora with Enforcing mode), verify that the Rust implementation of <code>ls -Z</code> or <code>cp -a</code> handles contexts exactly as expected.</p>
       </section>
+
       <section>
-        <h2>4. Lack of Streaming & Pipeline Robustness</h2>
-        <p>Some utilities buffer entire input before processing (e.g., <code>head</code> and <code>tail</code> variants), undermining Unix pipeline principles. This can lead to high memory usage and pipeline stalls on large data streams.</p>
+        <h2>4. The "Battle-Tested" Argument</h2>
+        <p>GNU Coreutils is the bedrock of Linux. It has been debugged by millions of users for decades. Uutils is an amazing project, but it is newer.</p>
+        <p>Replacing the foundational userland tools of an OS introduces a risk of "unknown unknowns"—bugs that haven't been discovered yet because the software hasn't seen as much diverse hardware and usage as GNU has.</p>
       </section>
-      <section>
-        <h2>5. Test Coverage Gaps</h2>
-        <p>The test suite often omits corner cases—failure exit codes on partial writes, handling of unusual file permissions, or non-UTF8 byte sequences. Deployments on diverse international systems risk silent data corruption.</p>
-      </section>
+
       <section class="sources">
-        <h2>Sources</h2>
+        <h2>Read the tracking issues</h2>
         <ul>
-          <li><a href="https://github.com/uutils/coreutils/issues/2300" target="_blank">GitHub #2300: Missing flag support</a></li>
-          <li><a href="https://blog.rust-lang.org/2025/02/10/Rust-binary-size.html" target="_blank">Rust blog: Binary size impacts</a></li>
-          <li><a href="https://github.com/uutils/coreutils/issues/2456" target="_blank">Locale-aware sort missing (Issue #2456)</a></li>
-          <li><a href="https://github.com/uutils/coreutils/issues/2501" target="_blank">Pipeline buffering in head/tail (Issue #2501)</a></li>
-          <li><a href="https://github.com/uutils/coreutils/pull/2256" target="_blank">Test suite gaps in edge-case behavior</a></li>
+          <li><a href="https://github.com/uutils/coreutils/issues/3820" target="_blank">GitHub: GNU Compatibility Tracking Issue</a></li>
+          <li><a href="https://github.com/uutils/coreutils/blob/main/make-gnu-test-report.py" target="_blank">Uutils: GNU Test Suite Report Script</a></li>
+          <li><a href="https://wiki.debian.org/RustCoreutils" target="_blank">Debian Wiki: Status of Rust Coreutils packaging</a></li>
         </ul>
       </section>
     </article>
+
     <footer>
-      <p>&copy; 2025 Ashley. <a href="/">Home</a> • <a href="/optout">Opt Out of Metrics</a></p>
+      <div class="footer-links">
+        <a href="https://github.com/ashley0143">Github</a> • 
+        <a href="#">Discord</a> • 
+        <a href="#">Reddit</a>
+      </div>
+      <div class="license">
+        <p>This website does not track you. No cookies. No data collection.</p>
+        <p>© 2026 Ashley.</p>
+      </div>
     </footer>
   </div>
 </body>
