@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>False Claims About Me | Ashley</title>
+    <meta name="theme-color" content="#ffc2d1" />
+    <meta property="og:title" content="False Claims About Me | Ashley" />
+    <meta property="og:image" content="https://cdn.glitch.com/6713522c-ff2f-4788-b553-a77acb1ec74a/ashleypfp.png" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="shortcut icon" href="https://cdn.glitch.com/6713522c-ff2f-4788-b553-a77acb1ec74a/ashleypfp.png" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #fff0f3 0%, #fff5f8 100%);
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --primary-pink: #ff8fab;
+            --deep-pink: #fb6f92;
+            --soft-blue: #a2d2ff;
+            --text-main: #594a4e;
+            --text-dim: #8c7b7f;
+            --shadow: 0 8px 32px 0 rgba(255, 143, 171, 0.15);
+            --radius: 24px;
+        }
+
+        * { box-sizing: border-box; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+        body {
+            margin: 0;
+            font-family: 'Nunito', sans-serif;
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-main);
+            background-image: radial-gradient(var(--primary-pink) 1px, transparent 1px);
+            background-size: 30px 30px;
+            line-height: 1.8;
+        }
+
+        nav {
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 50px;
+            padding: 10px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border: 2px solid white;
+        }
+
+        .nav-logo {
+            font-family: 'Comic Neue', cursive;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--deep-pink);
+            text-decoration: none;
+        }
+
+        .lang-select {
+            background: #fff;
+            border: 2px solid var(--primary-pink);
+            border-radius: 20px;
+            padding: 5px 10px;
+            color: var(--deep-pink);
+            font-family: 'Nunito', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: var(--deep-pink);
+            font-family: 'Comic Neue', cursive;
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 0px rgba(255,255,255,0.8);
+        }
+
+        .article-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 2px solid white;
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            font-size: 1.05rem;
+        }
+
+        .essay-section { margin-bottom: 1.2rem; }
+
+        h2.subheading {
+            font-family: 'Comic Neue', cursive;
+            color: var(--deep-pink);
+            font-size: 1.8rem;
+            margin-top: 2.2rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2.subheading::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: repeating-linear-gradient(
+                to right,
+                var(--primary-pink) 0,
+                var(--primary-pink) 5px,
+                transparent 5px,
+                transparent 10px
+            );
+            opacity: 0.5;
+        }
+
+        strong {
+            color: var(--deep-pink);
+            font-weight: 800;
+        }
+
+        a {
+            color: var(--deep-pink);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px dashed var(--soft-blue);
+        }
+
+        a:hover {
+            border-bottom-style: solid;
+            background: #fff0f3;
+        }
+
+        hr {
+            border: none;
+            border-top: 3px dashed var(--primary-pink);
+            margin: 2rem 0;
+            opacity: 0.5;
+        }
+
+        .note-box {
+            background: rgba(255,255,255,0.55);
+            border: 2px solid white;
+            border-radius: 16px;
+            padding: 14px 16px;
+            margin: 1rem 0 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            border-top: 2px dashed var(--primary-pink);
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        .footer-links {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            border: none;
+        }
+
+        .footer-links a:hover {
+            background: none;
+            transform: translateY(-3px);
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-logo">⬅ Back to Home</a>
+        <select class="lang-select" style="opacity: 0.7; cursor: default;">
+            <option value="en">🇨🇦 EN</option>
+        </select>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>False Claims About Me</h1>
+        </header>
+
+        <main class="article-card">
+            <section class="lead">
+                <p class="essay-section">
+                    There are a lot of false things being said about me online, and I want to address them clearly in one place.
+                    I am writing this because I am tired of people repeating accusations that are either completely false or
+                    heavily twisted.
+                </p>
+
+                <p class="essay-section">
+                    This post is not drama bait. It is just a direct response to claims that keep getting spread around as if they are facts.
+                </p>
+
+                <div class="note-box">
+                    <p class="essay-section" style="margin: 0;">
+                        <strong>Please read this fully before repeating rumors.</strong> A lot of the stuff being said about me leaves out basic context.
+                    </p>
+                </div>
+
+                <h2 class="subheading">1) The NSFW channel claim</h2>
+                <p class="essay-section">
+                    One of the biggest false claims is about the Discord server for <strong>Poke</strong> (the YouTube front-end I made).
+                    Yes, there was an NSFW channel in that server.
+                </p>
+
+                <p class="essay-section">
+                    What people keep leaving out is the important part: <strong>it was locked behind an age gate / restricted channel</strong>.
+                    It was not public to everyone, and it was not being shown to minors by default.
+                </p>
+
+                <p class="essay-section">
+                    Some people tried to spin this into “you were showing NSFW content to minors,” which is simply not true.
+                    The channel was restricted. If someone lied about their age to get access, that is not something I could magically detect.
+                    I did not intentionally expose minors to NSFW content.
+                </p>
+
+                <h2 class="subheading">2) The “k” accusation</h2>
+                <p class="essay-section">
+                    Another rumor involves someone I will call <strong>k</strong>.
+                    We were friends. We talked a lot, got along really well, and they even made me a profile picture.
+                    It was a normal online friendship.
+                </p>
+
+                <p class="essay-section">
+                    At one point, they sent me a smooching emoji, and I sent one back.
+                    Somehow, people turned that into a serious accusation and started calling me a pedophile / groomer.
+                </p>
+
+                <p class="essay-section">
+                    There was <strong>nothing sexual</strong> going on.
+                    There was no grooming, no inappropriate behavior, and no hidden relationship.
+                    People took a tiny moment out of context and exaggerated it into something disgusting and false.
+                </p>
+
+                <p class="essay-section">
+                    I genuinely do not understand why some people jumped to that conclusion, but I want to be very clear:
+                    <strong>that accusation is false.</strong>
+                </p>
+
+                <h2 class="subheading">3) “Internet sister” being misread as dating</h2>
+                <p class="essay-section">
+                    The last thing is about internet family terms.
+                    A lot of people online use words like “son,” “daughter,” “sister,” or “brother” in a completely non-romantic way.
+                    That is just a normal internet thing in some communities.
+                </p>
+
+                <p class="essay-section">
+                    I asked someone to be my <strong>internet sister</strong>.
+                    That was it.
+                    It was not a dating request, and it was not sexual or romantic.
+                </p>
+
+                <p class="essay-section">
+                    But again, some people twisted it and acted like I was trying to date them.
+                    I was not.
+                    I never asked them out, and I never asked for anything weird.
+                </p>
+
+                <hr />
+
+                <h2 class="subheading">What I am asking</h2>
+                <p class="essay-section">
+                    Please stop calling me a groomer over things that were not grooming.
+                    These accusations are serious, and throwing them around carelessly hurts real people.
+                </p>
+
+                <p class="essay-section">
+                    If you care about safety online, then focus on actual predators and actual abuse.
+                    There are real victims who need support, and real creeps who should be held accountable.
+                    Making up or spreading false claims about me does not help anyone.
+                </p>
+
+                <p class="essay-section">
+                    I am asking people to be fair, stop repeating rumors, and stop turning basic online interactions into something they were not.
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="https://github.com/ashley0143" rel="me"><i class="fab fa-github"></i> GitHub</a> •
+                <a href="https://discord.com/users/1456363852794040580"><i class="fab fa-discord"></i> Discord</a> •
+                <a href="https://www.reddit.com/user/Ash_Potter"><i class="fab fa-reddit"></i> Reddit</a>
+            </div>
+            <p>
+                This website does not track you. No cookies. No data collection. 100% handcrafted without JavaScript.<br />
+                Permission is granted to copy, distribute and/or modify this document under the terms of the <a href="http://www.gnu.org/licenses/fdl.txt">GNU Free Documentation License</a>.
+            </p>
+            <p>© 2026 Ashley.</p>
+        </footer>
+    </div>
+</body>
+</html>
