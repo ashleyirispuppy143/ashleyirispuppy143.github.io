@@ -332,12 +332,20 @@
                             p0rt.innerHTML = `<iframe width="1062" height="597" src="https://www.youtube.com/embed/${_dx("7a4b535259694d6c545830")}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
                         } else {
                             p0rt.innerHTML = `<h1 style="color:#d33;text-align:center;margin-top:40vh;font-family:monospace;letter-spacing:5px;">${_dx("494e434f52524543542e")}</h1>`;
-                            setTimeout(() => location.reload(), 1500);
+                            setTimeout(() => { p0rt.style.display='none'; p0rt.innerHTML=''; }, 1500);
                         }
                     };
                     e.target.value = '';
                     return;
                 }
+            }
+
+            if (_v.length === 84) {
+                 if (_ch([108,104,106,91,84,105,88,85,104,96,85,95,88,87,84,101,104,104,97,87,88,97,104,104,90,91,97,104,106,88,97,103,88,101,92,97,103,91,88,101,92,99,99,95,88,104,89,103,91,88,87,84,101,94,89,84,97,103,84,102,92,88,102,84,97,87,91,88,84,101,103,91,88,106,104,101,87,84,96,92,87,102,103,103,91,88,102,104,104,97,87])) {
+                     _1np.value = _dx("5041474520REVTVFVSQUNUSU9OIFNUQVJUSU5HLi4uLiBQTEVBU0UgV0FJVCBGT1IgVVBEQVRFUy4uIFRSQU5TIFJJR0hUUyBBUkUgSFVNQU4gUklHSFRTLiBUSEFOS1MgRk9SIFRIRSBCRUVTLg==");
+                     _1np.disabled = true;
+                     return;
+                 }
             }
 
             if (_v.length === 22) {
