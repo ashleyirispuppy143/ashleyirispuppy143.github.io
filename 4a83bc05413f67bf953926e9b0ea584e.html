@@ -24,13 +24,13 @@
             90% { background-position: -10% 10%; }
             100% { background-position: 10% -10%; }
         }
-        @keyframes flare {
-            0% { box-shadow: inset 0 0 100px rgba(0,0,0,0.8), inset 0 0 20px rgba(50, 0, 0, 0.5); }
-            100% { box-shadow: inset 0 0 250px rgba(0,0,0,1), inset 0 0 120px rgba(0, 0, 0, 0.9); }
+        @keyframes flare_opacity {
+            0% { opacity: 0.3; }
+            100% { opacity: 1; }
         }
         .x7q_p9 {
             background-color: #050202;
-            background-image:
+            background-image: 
                 radial-gradient(circle at 50% 50%, transparent 10%, #000000 100%),
                 repeating-radial-gradient(#200b04, #080302 2px, transparent 3px, transparent 80px);
             color: #8a3a3a;
@@ -42,7 +42,16 @@
             overflow: hidden;
             user-select: none;
             position: relative;
-            animation: flare 4s infinite alternate ease-in-out;
+        }
+        .flare_overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            box-shadow: inset 0 0 250px rgba(0,0,0,1), inset 0 0 120px rgba(0, 0, 0, 0.9);
+            animation: flare_opacity 4s infinite alternate ease-in-out;
+            pointer-events: none;
+            z-index: 5;
+            will-change: opacity;
+            transform: translateZ(0);
         }
         .x7q_p9::before {
             content: "";
@@ -53,6 +62,8 @@
             animation: noise 0.3s steps(1) infinite;
             pointer-events: none;
             z-index: 90;
+            will-change: background-position;
+            transform: translateZ(0);
         }
         .crt_overlay {
             position: absolute;
@@ -61,6 +72,7 @@
             background-size: 100% 3px, 3px 100%;
             z-index: 95;
             pointer-events: none;
+            transform: translateZ(0);
         }
         .shattered_screen {
             position: absolute;
@@ -68,12 +80,14 @@
             pointer-events: none;
             z-index: 85;
             opacity: 0.4;
+            transform: translateZ(0);
         }
         .shattered_screen path {
             stroke: #ff3333;
             stroke-width: 1.5;
             fill: none;
             filter: drop-shadow(0 0 3px #f00);
+            transform: translateZ(0);
         }
         ._v01d_w {
             text-align: center;
@@ -85,12 +99,14 @@
             border: 25px solid #1c0a05;
             border-radius: 40px;
             box-shadow: inset 0 0 60px rgba(0,0,0,1), 0 0 40px rgba(74, 16, 16, 0.4);
+            will-change: transform, opacity;
+            transform: translateZ(0);
         }
         .w_88_x_1np {
             background: radial-gradient(circle at 50% 50%, #1c0e01 0%, #000000 100%);
             border: 2px solid #3d1b08;
             border-radius: 50% / 5%;
-            color: #ffb84d;
+            color: #ffb84d; 
             font-family: monospace;
             font-size: 2.5vw;
             text-align: center;
@@ -103,6 +119,7 @@
             text-shadow: 2px 0 1px rgba(255,0,0,0.5), -2px 0 1px rgba(0,0,255,0.5), 0 0 12px rgba(255, 184, 77, 0.8);
             box-shadow: inset 0 0 40px rgba(0, 0, 0, 1);
             position: relative;
+            transform: translateZ(0);
         }
         .w_88_x_1np:focus {
             border-color: #d17c24;
@@ -112,10 +129,10 @@
         }
         @keyframes k_zr0 {
             0% { opacity: 0.7; filter: drop-shadow(0 0 2px rgba(138,58,58,0.2)); }
-            5% { opacity: 0.3; transform: translate(1px, -1px); }
+            5% { opacity: 0.3; transform: translate(1px, -1px); } 
             7% { opacity: 0.8; transform: translate(0, 0); }
             10% { opacity: 0.9; filter: drop-shadow(0 0 5px rgba(138,58,58,0.4)); }
-            12% { opacity: 0.4; transform: translate(-1px, 1px) scaleY(1.02); }
+            12% { opacity: 0.4; transform: translate(-1px, 1px) scaleY(1.02); } 
             14% { opacity: 0.9; transform: translate(0, 0) scaleY(1); }
             50% { opacity: 0.85; }
             100% { opacity: 0.8; filter: drop-shadow(0 0 3px rgba(138,58,58,0.3)); }
@@ -130,29 +147,31 @@
             align-items: center;
             z-index: 9999;
             animation: f4d3_1n 1.5s ease forwards;
+            transform: translateZ(0);
         }
         .s_f0rm {
-            background: #050202;
-            padding: 40px;
-            border: 3px solid #1a0808;
-            color: #a44;
-            font-family: monospace;
-            max-width: 800px;
-            width: 90vw;
+            background: #050202; 
+            padding: 40px; 
+            border: 3px solid #1a0808; 
+            color: #a44; 
+            font-family: monospace; 
+            max-width: 800px; 
+            width: 90vw; 
             text-align: left;
             box-shadow: 0 0 30px rgba(138,58,58,0.1);
             position: relative;
             text-shadow: 1px 0 1px rgba(255,0,0,0.5), -1px 0 1px rgba(0,0,255,0.5);
+            transform: translateZ(0);
         }
         .s_f0rm p { margin-bottom: 10px; font-size: 1.3rem; letter-spacing: 1px; }
         .s_f0rm input[type="text"], .s_f0rm select {
-            background: #100; color: #ffb84d; border: 1px solid #511;
-            padding: 10px; width: 100%; font-family: monospace; outline: none;
+            background: #100; color: #ffb84d; border: 1px solid #511; 
+            padding: 10px; width: 100%; font-family: monospace; outline: none; 
             font-size: 1.2rem; margin-bottom: 25px;
         }
-        .s_f0rm button {
-            background: #100; color: #d33; border: 2px solid #511;
-            padding: 12px 25px; cursor: pointer; margin-top: 10px;
+        .s_f0rm button { 
+            background: #100; color: #d33; border: 2px solid #511; 
+            padding: 12px 25px; cursor: pointer; margin-top: 10px; 
             font-family: monospace; letter-spacing: 2px; transition: 0.2s;
             font-size: 1.2rem; width: 100%;
         }
@@ -168,8 +187,9 @@
     </style>
 </head>
 <body class="x7q_p9" id="m41n_sys">
+    <div class="flare_overlay"></div>
     <div class="crt_overlay"></div>
-
+    
     <svg class="shattered_screen" viewBox="0 0 100 100" preserveAspectRatio="none">
         <path d="M10,0 L30,40 L60,20 L80,50 L100,10" />
         <path d="M0,30 L40,60 L50,90" />
@@ -196,7 +216,6 @@
         _1np.addEventListener('input', (e) => {
             const _v = e.target.value.toLowerCase().trim();
 
-
             if (_v === _dx("31343838373532353634333336383533303632")) {
                 _1np.blur();
                 p0rt.style.display = 'flex';
@@ -212,17 +231,17 @@
                         <button id="fr_btn">${_dx("5355424d4954")}</button>
                     </div>
                 `;
-
+                
                 document.getElementById('fr_btn').onclick = () => {
                     let a1 = document.getElementById('q1').value.toLowerCase().trim();
                     let a2 = document.getElementById('q2').value.toLowerCase().trim();
                     let a3 = document.getElementById('q3').value.toLowerCase().trim();
-
+                    
                     if (a1 === _dx("6c69676874") && a2 === _dx("64657465726d696e6174696f6e") && a3 === _dx("7465616d776f726b")) {
                         p0rt.innerHTML = "";
                         p0rt.style.transition = "background 2s ease";
                         p0rt.style.background = "#ffffff";
-
+                        
                         setTimeout(() => {
                             p0rt.innerHTML = `<h1 style="color:#000;font-family:monospace;font-size:2vw;text-align:center;padding:50px;animation: f4d3_1n 2s ease;max-width:80vw;">${_dx("54686520666561747320796f752061636869657665642074687573206661722e2e2e796f7520617265206e6f7720776f7274687920746f2070726f636c61696d20616761696e7374207468652073656372657461726965732c207468617420796f7520617265206e6f77206120726967687466756c20534156494f52")}</h1>`;
                         }, 3000);
@@ -233,7 +252,6 @@
                 };
                 return;
             }
-
 
             if (_v === _dx("7375727665795f70726f6772616d")) {
                 _1np.blur();
@@ -269,13 +287,13 @@
                         <button id="s_btn">${_dx("5355424d4954")}</button>
                     </div>
                 `;
-
+                
                 document.getElementById('s_btn').onclick = () => {
                     let v1 = document.getElementById('s1').value;
                     let v2 = document.getElementById('s2').value;
                     let v3 = document.getElementById('s3').value;
                     let v4 = document.getElementById('s4').value;
-
+                    
                     if (v1 === _dx("7468757273646179") && v2 === _dx("3335") && v3 === _dx("3131") && v4 === _dx("796573")) {
                         p0rt.style.transition = "background 0.5s ease";
                         p0rt.style.background = "#ffffff";
@@ -292,7 +310,7 @@
             }
         });
 
-         document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function(e) {
             if ((e.ctrlKey && e.key.toLowerCase() === 'u') ||
                 (e.metaKey && e.altKey && e.key.toLowerCase() === 'u') ||
                 e.key === 'F12' ||
