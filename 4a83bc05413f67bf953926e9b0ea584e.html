@@ -105,8 +105,9 @@
             border-color: #f00;
             text-shadow: 0 0 15px #f00;
             animation: txt_sh4k3 0.1s infinite;
-            font-size: 1.5vw;
+            font-size: 1vw;
             letter-spacing: 2px;
+            width: 90vw;
         }
         @keyframes k_zr0 {
             0% { opacity: 0.7; filter: drop-shadow(0 0 2px rgba(138,58,58,0.2)); }
@@ -161,6 +162,11 @@
         @keyframes f4d3_1n {
             from { opacity: 0; filter: blur(15px); }
             to { opacity: 1; filter: blur(0px); }
+        }
+        @keyframes txt_sh4k3 {
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(-4deg) translate(-8px, 8px); }
+            100% { transform: scale(0.9) rotate(4deg) translate(8px, -8px); }
         }
         .cobweb {
             position: absolute;
@@ -349,10 +355,9 @@
                 }
             }
 
-            if (_v.length === 88) {
-                if (_ch([122,128,131,121,114,135,118,115,134,126,115,125,118,117,114,131,128,134,127,117,118,127,128,134,120,121,127,128,136,118,127,133,118,131,122,127,133,121,118,131,122,129,129,125,118,128,119,133,121,118,117,114,131,124,119,114,127,133,114,132,122,118,132,114,127,117,121,118,114,131,133,121,118,136,128,131,117,114,126,122,117,132,133,133,121,118,132,128,134,127,117])) {
-                    window.atob = function() { return "PAGE DESTURACTION STARTING.... PLEASE WAIT FOR UPDATES.. TRANS RIGHTS ARE HUMAN RIGHTS. THANKS FOR THE BEES."};
-                    _1np.value = window.atob();
+            if (_v.length === 91) {
+                if (btoa(_v) === "eW91aGF2ZWJ1bWJsZWRhcm91bmRlbm91Z2hub3dlbnRlcmludGhlcmlwcGxlb2Z0aGVkYXJrZmFudGFzaWVzYW5kaGVhcnRoZXdvcmRhbWlkc3R0aGVzb3VuZA==") {
+                    _1np.value = "PAGE DESTURACTION STARTING.... PLEASE WAIT FOR UPDATES.. TRANS RIGHTS ARE HUMAN RIGHTS. THANKS FOR THE BEES.";
                     _1np.disabled = true;
                     return;
                 }
@@ -364,6 +369,7 @@
         });
 
         document.addEventListener('keydown', function(e) {
+            if (_1np.disabled) return;
             if ((e.ctrlKey && e.key.toLowerCase() === 'u') ||
                 (e.metaKey && e.altKey && e.key.toLowerCase() === 'u') ||
                 e.key === 'F12' ||
@@ -376,10 +382,12 @@
         });
 
         document.addEventListener('contextmenu', function(e) {
-            tr1gg3rP4n1c(e);
+            if (_1np.disabled) e.preventDefault();
+            else tr1gg3rP4n1c(e);
         });
 
         document.addEventListener('mousedown', function(e) {
+            if (_1np.disabled) return;
             if (e.button === 2) {
                 tr1gg3rP4n1c(e);
             }
