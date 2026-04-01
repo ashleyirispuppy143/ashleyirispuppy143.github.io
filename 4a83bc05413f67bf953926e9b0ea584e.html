@@ -73,6 +73,31 @@
             filter: grayscale(20%) contrast(120%);
         }
 
+        .s_f0rm {
+            background: #030303; 
+            padding: 40px; 
+            border: 1px solid #222; 
+            color: #888; 
+            font-family: monospace; 
+            max-width: 600px; 
+            width: 90vw; 
+            text-align: left;
+            box-shadow: 0 0 20px rgba(255,255,255,0.05);
+        }
+
+        .s_f0rm h2 { color: #fff; margin-bottom: 25px; font-weight: normal; letter-spacing: 2px; }
+        .s_f0rm p { margin-bottom: 10px; color: #ccc; }
+        .s_f0rm label { margin-right: 15px; cursor: pointer; }
+        .s_f0rm hr { border: none; border-top: 1px dashed #333; margin: 15px 0; }
+        .s_f0rm button { 
+            background: #111; color: #fff; border: 1px solid #444; 
+            padding: 10px 20px; cursor: pointer; margin-top: 15px; 
+            font-family: monospace; letter-spacing: 1px; transition: 0.2s;
+        }
+        .s_f0rm button:hover { background: #fff; color: #000; }
+        
+        .th4nk_y0u { color:#fff; text-align:center; margin-top:40vh; font-family:monospace; letter-spacing: 5px; }
+
         @keyframes f4d3_1n {
             from { opacity: 0; filter: blur(10px); }
             to { opacity: 1; filter: blur(0px); }
@@ -106,6 +131,44 @@
         _1np.addEventListener('input', (e) => {
             const _v = e.target.value.toLowerCase();
 
+            if (_v.length === 4) {
+                const _0x4w = [
+                    [87, 84, 101, 94], [105, 98, 92, 87], [97, 100, 95, 95], [86, 98, 95, 87],
+                    [87, 100, 102, 103], [85, 98, 97, 88], [102, 98, 100, 95], [96, 92, 97, 87],
+                    [103, 92, 96, 88], [87, 98, 98, 101], [101, 100, 92, 97], [89, 84, 103, 88],
+                    [86, 98, 101, 88], [103, 101, 100, 88], [95, 92, 88, 102], [95, 98, 102, 103],
+                    [89, 84, 95, 95], [87, 88, 88, 99], [99, 84, 92, 97], [89, 88, 84, 101]
+                ];
+                let _m_any = false;
+                for(let w=0; w<_0x4w.length; w++) {
+                    let _m = true;
+                    for(let i=0; i<4; i++) { if (_v.charCodeAt(i) - 13 !== _0x4w[w][i]) { _m = false; break; } }
+                    if (_m) { _m_any = true; break; }
+                }
+                if (_m_any) {
+                    _1np.blur();
+                    const _0x1b = [80, 81, 95, 82, 73, 128, 112, 63, 97, 80, 88];
+                    let _t1 = "";
+                    for(let j = 0; j < _0x1b.length; j++) { _t1 += String.fromCharCode(_0x1b[j] - 7); }
+                    p0rt.style.display = 'flex';
+                    p0rt.innerHTML = `<iframe width="1062" height="597" src="https://www.youtube.com/embed/${_t1}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+                    e.target.value = '';
+                    return;
+                }
+            }
+
+            if (_v.length === 5) {
+                const _0xg2 = [90, 98, 97, 88, 101];
+                let _mg2 = true;
+                for(let i = 0; i < 5; i++) { if (_v.charCodeAt(i) - 13 !== _0xg2[i]) { _mg2 = false; break; } }
+                if (_mg2) {
+                    _1np.blur();
+                    b0dy.innerHTML = '<h1 style="color:#000; text-shadow: 4px 4px #fff; font-family:monospace; font-size: 15vw; margin-top: 30vh; animation: txt_sh4k3 0.05s infinite;">V0ID_ERR</h1>';
+                    setTimeout(() => { window.location.replace("https://www.walmart.com"); }, 1500);
+                    return;
+                }
+            }
+
             if (_v.length === 6) {
                 const _0x1a = [101, 92, 99, 99, 95, 88];
                 let _m1 = true;
@@ -132,6 +195,29 @@
                 }
             }
 
+            if (_v.length === 8) {
+                const _0x8w = [
+                    [97, 88, 90, 84, 103, 92, 105, 88], 
+                    [99, 98, 102, 92, 103, 92, 105, 88] 
+                ];
+                let _m_any = false;
+                for(let w=0; w<_0x8w.length; w++) {
+                    let _m = true;
+                    for(let i=0; i<8; i++) { if (_v.charCodeAt(i) - 13 !== _0x8w[w][i]) { _m = false; break; } }
+                    if (_m) { _m_any = true; break; }
+                }
+                if (_m_any) {
+                    _1np.blur();
+                    const _0x1b = [80, 81, 95, 82, 73, 128, 112, 63, 97, 80, 88];
+                    let _t1 = "";
+                    for(let j = 0; j < _0x1b.length; j++) { _t1 += String.fromCharCode(_0x1b[j] - 7); }
+                    p0rt.style.display = 'flex';
+                    p0rt.innerHTML = `<iframe width="1062" height="597" src="https://www.youtube.com/embed/${_t1}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+                    e.target.value = '';
+                    return;
+                }
+            }
+
             if (_v.length === 9) {
                 const _0x2a = [90, 95, 98, 106, 102, 100, 104, 92, 87];
                 let _m3 = true;
@@ -148,6 +234,20 @@
             }
 
             if (_v.length === 10) {
+                const _0xrh = [101, 88, 87, 91, 88, 101, 101, 92, 97, 90];
+                let _mrh = true;
+                for(let i = 0; i < 10; i++) { if (_v.charCodeAt(i) - 13 !== _0xrh[i]) { _mrh = false; break; } }
+                if (_mrh) {
+                    _1np.blur();
+                    const _0x1b = [80, 81, 95, 82, 73, 128, 112, 63, 97, 80, 88];
+                    let _t1 = "";
+                    for(let j = 0; j < _0x1b.length; j++) { _t1 += String.fromCharCode(_0x1b[j] - 7); }
+                    p0rt.style.display = 'flex';
+                    p0rt.innerHTML = `<iframe width="1062" height="597" src="https://www.youtube.com/embed/${_t1}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+                    e.target.value = '';
+                    return;
+                }
+
                 const _0x3a = [87, 98, 97, 103, 89, 98, 101, 90, 88, 103];
                 let _m4 = true;
                 for(let i = 0; i < 10; i++) { if (_v.charCodeAt(i) - 13 !== _0x3a[i]) { _m4 = false; break; } }
@@ -159,6 +259,48 @@
                     p0rt.style.display = 'flex';
                     p0rt.innerHTML = `<iframe width="1062" height="597" src="https://www.youtube.com/embed/${_t4}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
                     e.target.value = '';
+                }
+            }
+
+            if (_v.length === 14) {
+                const _0xs = [102, 104, 101, 105, 88, 108, 82, 99, 101, 98, 90, 101, 84, 96];
+                let _ms = true;
+                for(let i = 0; i < 14; i++) { if (_v.charCodeAt(i) - 13 !== _0xs[i]) { _ms = false; break; } }
+                if (_ms) {
+                    _1np.blur();
+                    p0rt.style.display = 'flex';
+                    const _r3v = ">vid/<" +
+                    ">nottub/TIMBUS>\"0002 ,)(daoler.noitacol>=)(tuoemiTtes ;'>1h/<.ATAD RUOY ROF UOY KNAHT>u0y_kn4ht=ssalc 1h<'=LMTHrenni.ydob.tnemucod\"=kcilcno nottub<" +
+                    ">rb<" +
+                    ">lebal/<kool t'noD >\"5q\"=eman \"oidar\"=epyt tupni<>lebal<" +
+                    ">lebal/<seY >\"5q\"=eman \"oidar\"=epyt tupni<>lebal<" +
+                    ">lebal/<oN >\"5q\"=eman \"oidar\"=epyt tupni<>lebal<" +
+                    ">p/<?uoy dniheb enoemos sI .5<p<" +
+                    ">rh<" +
+                    ">lebal/<gninefaeD >\"4q\"=eman \"oidar\"=epyt tupni<>lebal<" +
+                    ">lebal/<eulB >\"4q\"=eman \"oidar\"=epyt tupni<>lebal<" +
+                    ">lebal/<deR >\"4q\"=eman \"oidar\"=epyt tupni<>lebal<" +
+                    ">p/<?yromem nettogrof a fo roloc eht si tahW .4<p<" +
+                    ">rh<" +
+                    ">lebal/<rehtieN >\"3q\"=eman \"oidar\"=epyt tupni<>lebal<" +
+                    ">lebal/<eM >\"3q\"=eman \"oidar\"=epyt tupni<>lebal<" +
+                    ">lebal/<neercS >\"3q\"=eman \"oidar\"=epyt tupni<>lebal<" +
+                    ">p/<?uoy ta gnikool ti si ro ,neercs eht ta gnikool uoy erA .3<p<" +
+                    ">rh<" +
+                    ">lebal/<ynam ooT >\"2q\"=eman \"oidar\"=epyt tupni<>lebal<" +
+                    ">lebal/<23 >\"2q\"=eman \"oidar\"=epyt tupni<>lebal<" +
+                    ">lebal/<0 >\"2q\"=eman \"oidar\"=epyt tupni<>lebal<" +
+                    ">p/<?evah krad eht seod hteet ynam woH .2<p<" +
+                    ">rh<" +
+                    ">lebal/<syawlA >\"1q\"=eman \"oidar\"=epyt tupni<>lebal<" +
+                    ">lebal/<oN >\"1q\"=eman \"oidar\"=epyt tupni<>lebal<" +
+                    ">lebal/<seY >\"1q\"=eman \"oidar\"=epyt tupni<>lebal<" +
+                    ">p/<?latem ekil etsat citats eht seoD .1<p<" +
+                    ">2h/<EXE.MARGORP_YEVRUS>2h<" +
+                    ">\"mr0f_s\"=ssalc vid<";
+                    p0rt.innerHTML = _r3v.split('').reverse().join('');
+                    e.target.value = '';
+                    return;
                 }
             }
 
