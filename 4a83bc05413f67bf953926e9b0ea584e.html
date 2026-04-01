@@ -99,16 +99,6 @@
             color: #ffdeb3;
             text-shadow: 2px 0 1px rgba(255,0,0,0.6), -2px 0 1px rgba(0,0,255,0.6), 0 0 25px rgba(255, 184, 77, 1);
         }
-        .w_88_x_1np:disabled {
-            background: #000;
-            color: #f00;
-            border-color: #f00;
-            text-shadow: 0 0 15px #f00;
-            animation: txt_sh4k3 0.1s infinite;
-            font-size: 1vw;
-            letter-spacing: 2px;
-            width: 90vw;
-        }
         @keyframes k_zr0 {
             0% { opacity: 0.7; filter: drop-shadow(0 0 2px rgba(138,58,58,0.2)); }
             5% { opacity: 0.3; transform: translate(1px, -1px); } 
@@ -163,11 +153,6 @@
             from { opacity: 0; filter: blur(15px); }
             to { opacity: 1; filter: blur(0px); }
         }
-        @keyframes txt_sh4k3 {
-            0% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.1) rotate(-4deg) translate(-8px, 8px); }
-            100% { transform: scale(0.9) rotate(4deg) translate(8px, -8px); }
-        }
         .cobweb {
             position: absolute;
             opacity: 0.15;
@@ -211,11 +196,11 @@
         if(Date.now() > 1775865600000) { document.body.innerHTML = ''; throw new Error(); }
 
         const _t = ["ENTRY NUMBER 17", "DARK DARKER YET DARKER", "THE SHADOWS CUT DEEPER", "PHOTON READINGS NEGATIVE", "WHERE ARE WE?", "IT'S SO COLD", "NO ONE CAN HEAR YOU", "NOTHING BUT TRASH", "SMILE FOR THE CAMERA"];
-        setInterval(() => { document.title = _t[Math.floor(Math.random() * _t.length)]; }, 4000);
+        let title_interval = setInterval(() => { document.title = _t[Math.floor(Math.random() * _t.length)]; }, 4000);
         document.title = _t[0];
 
         const _cw = ["DARK","COLD","DUST","BONE","SOUL","MIND","TIME","DOOR","RUIN","FATE","CORE","TRUE","LIES","LOST","FALL","DEEP","PAIN","FEAR","SHADOW","VOID","ABYSS","SILENCE","BROKEN","ECHO","FORGOTTEN","MEMORY","SHATTERED","BLIND","DEAF","NUMB","EMPTY","HOLLOW","GRAVE","ASH","SPARK","GLASS","METAL","RUST","BREATH","SCREAM"];
-        setInterval(() => {
+        let word_interval = setInterval(() => {
             let d = document.createElement('div');
             d.className = 'fl_w';
             d.innerText = _cw[Math.floor(Math.random() * _cw.length)];
@@ -300,7 +285,7 @@
             }
 
             if (_v.length === 7) {
-                if (_ch([91, 98, 95, 92, 87, 84, 108])) return _rd("68747470733a2f2f64656c746172756e652e636f6d2f696365652f");
+                if (_ch([91, 98, 95, 92, 87, 84, 108])) return _rd("68747470733a2f2f64656c746172756e652e636f6d2f696365652f/ ");
             }
 
             if (_v.length === 8) {
@@ -355,10 +340,30 @@
                 }
             }
 
-            if (_v.length === 91) {
+             if (_v.length === 91) {
                 if (btoa(_v) === "eW91aGF2ZWJ1bWJsZWRhcm91bmRlbm91Z2hub3dlbnRlcmludGhlcmlwcGxlb2Z0aGVkYXJrZmFudGFzaWVzYW5kaGVhcnRoZXdvcmRhbWlkc3R0aGVzb3VuZA==") {
-                    _1np.value = "PAGE DESTURACTION STARTING.... PLEASE WAIT FOR UPDATES.. TRANS RIGHTS ARE HUMAN RIGHTS. THANKS FOR THE BEES.";
-                    _1np.disabled = true;
+                     clearInterval(word_interval);
+                    clearInterval(title_interval);
+                    
+                     document.body.innerHTML = '';
+                    document.body.className = ''; 
+                    document.body.style.backgroundColor = '#000';
+                    document.body.style.color = '#fff';
+                    document.body.style.display = 'flex';
+                    document.body.style.justifyContent = 'center';
+                    document.body.style.alignItems = 'center';
+                    document.body.style.height = '100vh';
+                    document.body.style.padding = '40px';
+
+                     const msg = document.createElement('h1');
+                    msg.style.fontFamily = 'monospace';
+                    msg.style.fontSize = '2.5vw';
+                    msg.style.textAlign = 'center';
+                    msg.style.letterSpacing = '2px';
+                    msg.style.lineHeight = '1.5';
+                    msg.innerText = "PAGE DESTURACTION STARTING.... PLEASE WAIT FOR UPDATES.. TRANS RIGHTS ARE HUMAN RIGHTS. THANKS FOR THE BEES.";
+                    
+                    document.body.appendChild(msg);
                     return;
                 }
             }
