@@ -21,13 +21,13 @@
             align-items: center;
             overflow: hidden;
             user-select: none;
-            transition: background-color 0.1s;
+            transition: background-color 0.3s ease;
         }
 
         ._v01d_w {
             text-align: center;
             pointer-events: none;
-            animation: k_zr0 6s infinite alternate;
+            animation: k_zr0 8s infinite alternate ease-in-out;
         }
 
         .w_88_x {
@@ -40,51 +40,46 @@
             max-width: 80vw;
         }
 
-        /* 0x99A_f1uct_s3q // dr0p_frames */
+        /* 0x99A_f1uct_s3q // s0ft_puls3 */
         @keyframes k_zr0 {
-            0%, 100% { opacity: 0.8; text-shadow: 0 0 8px rgba(200, 200, 200, 0.1); }
-            40% { opacity: 0.9; text-shadow: 0 0 12px rgba(255, 255, 255, 0.2); }
-            42% { opacity: 0.4; }
-            44% { opacity: 0.9; }
-            70% { opacity: 0.7; }
+            0%, 100% { opacity: 0.75; text-shadow: 0 0 8px rgba(200, 200, 200, 0.1); }
+            50% { opacity: 0.95; text-shadow: 0 0 15px rgba(255, 255, 255, 0.3); }
         }
 
-        /* ERR_C4SC4DE // ov3r_rid3_p4n1c */
+        /* ERR_C4SC4DE // ov3r_rid3_p4n1c (Toned Down) */
         .g11tch_m0d3 {
-            animation: err0r_v1 0.1s infinite !important;
-            background-color: #990000 !important;
+            animation: err0r_v1 0.5s infinite alternate !important;
+            background-color: #3a0000 !important; /* Darker, softer red */
         }
 
         .g11tch_m0d3 .w_88_x {
             font-family: monospace; 
             font-size: 15vw;
             font-weight: bold;
-            color: #000;
-            text-shadow: 5px 5px 0px rgba(255,255,255,0.8);
-            letter-spacing: -2vw;
-            animation: txt_sh4k3 0.05s infinite;
+            color: #111;
+            text-shadow: 3px 3px 0px rgba(200,200,200,0.5);
+            letter-spacing: -1vw;
+            animation: txt_sh4k3 0.2s infinite alternate;
         }
 
+        /* Slower, less jagged distortion without color inversion */
         @keyframes err0r_v1 {
-            0% { transform: translate(0, 0) skew(0deg); filter: invert(0); }
-            20% { transform: translate(-30px, 15px) skew(-20deg); filter: invert(1); }
-            40% { transform: translate(30px, -15px) skew(20deg); filter: invert(0); }
-            60% { transform: translate(-15px, -30px) skew(-10deg); filter: invert(1); }
-            80% { transform: translate(15px, 30px) skew(10deg); filter: invert(0); }
-            100% { transform: translate(0, 0) skew(0deg); filter: invert(1); }
+            0% { transform: translate(0, 0) skew(0deg); }
+            33% { transform: translate(-10px, 5px) skew(-5deg); }
+            66% { transform: translate(10px, -5px) skew(5deg); }
+            100% { transform: translate(-5px, -10px) skew(-2deg); }
         }
 
         @keyframes txt_sh4k3 {
             0% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.2) rotate(-5deg); }
-            100% { transform: scale(0.9) rotate(5deg); }
+            100% { transform: scale(1.05) rotate(-2deg); }
         }
     </style>
 </head>
 <body class="x7q_p9" id="m41n_sys">
 
     <div class="_v01d_w">
-        <div class="w_88_x" id="c0r3_txt">⚐︎☠︎☜︎ ☹︎☜︎❄︎❄︎☜︎☼︎📬︎📬︎📬︎⚐︎☠︎☜︎📬︎📬︎☹︎☜︎❄︎❄︎☜︎☼︎📬︎📬︎📬︎⚐︎☞︎☞︎📬︎ ☞︎✋︎☠︎👎︎📬︎ ✡︎⚐︎🕆︎❄︎🕆︎👌︎☜︎📬︎ ✞︎✋︎👎︎☜︎⚐︎📬︎ 💧︎⚐︎⚐︎☠︎📬︎ 💧︎⚐︎⚐︎☠︎📬︎ 💧︎⚐︎⚐︎☠︎📬︎</div>
+        <div class="w_88_x" id="c0r3_txt"> ⚐︎☠︎☜︎ ☹︎☜︎❄︎❄︎☜︎☼︎📬︎📬︎📬︎⚐︎☠︎☜︎📬︎📬︎☹︎☜︎❄︎❄︎☜︎☼︎📬︎📬︎📬︎⚐︎☞︎☞︎📬︎ ☞︎✋︎☠︎👎︎📬︎ ✡︎⚐︎🕆︎❄︎🕆︎👌︎☜︎📬︎ ✞︎✋︎👎︎☜︎⚐︎📬︎ 💧︎⚐︎⚐︎☠︎📬︎ 💧︎⚐︎⚐︎☠︎📬︎ 💧︎⚐︎⚐︎☠︎📬︎ </div>
     </div>
 
     <script>
