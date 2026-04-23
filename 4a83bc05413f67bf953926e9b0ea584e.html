@@ -2,335 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENTRY NUMBER 17</title>
-    <link rel="icon" href="https://deltarune.com/favicon.ico" type="image/x-icon">
+    <title>The Banana Zone</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        @keyframes noise {
-            0% { background-position: 0 0; }
-            10% { background-position: -5% -10%; }
-            20% { background-position: -15% 5%; }
-            30% { background-position: 7% -25%; }
-            40% { background-position: 20% 10%; }
-            50% { background-position: -25% 30%; }
-            60% { background-position: 15% 5%; }
-            70% { background-position: 0% 15%; }
-            80% { background-position: 25% 35%; }
-            90% { background-position: -10% 10%; }
-            100% { background-position: 10% -10%; }
-        }
-        @keyframes flare_opacity {
-            0% { opacity: 0.3; }
-            100% { opacity: 1; }
-        }
-        .x7q_p9 {
-            background-color: #050202;
-            background-image: 
-                radial-gradient(circle at 50% 50%, transparent 10%, #000000 100%),
-                repeating-radial-gradient(#200b04, #080302 2px, transparent 3px, transparent 80px);
-            color: #8a3a3a;
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            user-select: none;
-            position: relative;
-        }
-        .flare_overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            box-shadow: inset 0 0 250px rgba(0,0,0,1), inset 0 0 120px rgba(0, 0, 0, 0.9);
-            animation: flare_opacity 4s infinite alternate ease-in-out;
-            pointer-events: none;
-            z-index: 5;
-            will-change: opacity;
-            transform: translateZ(0);
-        }
-        .x7q_p9::before {
-            content: "";
-            position: absolute;
-            top: -50%; left: -50%; width: 200%; height: 200%;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTAgMGg0MHY0MEgwVjB6bTIwIDIwaDIwdjIwSDIWMjB6TTAgMjBoMjB2MjBIMFYyMHoyMCAwaDIwdjIwSDIwVjB6Ii8+PC9nPjwvZz48L3N2Zz4=');
-            opacity: 0.15;
-            animation: noise 0.3s steps(1) infinite;
-            pointer-events: none;
-            z-index: 90;
-            will-change: background-position;
-            transform: translateZ(0);
-        }
-        .crt_overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.04));
-            background-size: 100% 3px, 3px 100%;
-            z-index: 95;
-            pointer-events: none;
-            transform: translateZ(0);
-        }
-        .shattered_screen {
-            position: absolute;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            pointer-events: none;
-            z-index: 85;
-            opacity: 0.4;
-            transform: translateZ(0);
-        }
-        .shattered_screen path {
-            stroke: #ff3333;
-            stroke-width: 1.5;
-            fill: none;
-            filter: drop-shadow(0 0 3px #f00);
-            transform: translateZ(0);
-        }
-        ._v01d_w {
+        body {
+            background-color: #FFE135; /* Classic Banana Yellow */
+            font-family: 'Comic Sans MS', cursive, sans-serif;
             text-align: center;
-            animation: k_zr0 2s infinite alternate ease-in-out;
-            position: relative;
-            z-index: 10;
-            padding: 30px;
-            background: #080303;
-            border: 25px solid #1c0a05;
-            border-radius: 40px;
-            box-shadow: inset 0 0 60px rgba(0,0,0,1), 0 0 40px rgba(74, 16, 16, 0.4);
-            will-change: transform, opacity;
-            transform: translateZ(0);
+            padding: 50px;
+            color: #3e2723;
         }
-        .w_88_x_1np {
-            background: radial-gradient(circle at 50% 50%, #1c0e01 0%, #000000 100%);
-            border: 2px solid #3d1b08;
-            border-radius: 50% / 5%;
-            color: #ffb84d; 
-            font-family: monospace;
-            font-size: 2.5vw;
-            text-align: center;
-            outline: none;
-            text-transform: lowercase;
-            letter-spacing: 1.5vw;
-            width: 60vw;
-            padding: 35px;
-            transition: all 0.2s;
-            text-shadow: 2px 0 1px rgba(255,0,0,0.5), -2px 0 1px rgba(0,0,255,0.5), 0 0 12px rgba(255, 184, 77, 0.8);
-            box-shadow: inset 0 0 40px rgba(0, 0, 0, 1);
-            position: relative;
-            transform: translateZ(0);
+        .container {
+            background-color: white;
+            border: 5px solid #5d4037;
+            border-radius: 20px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 10px 10px 0px #8d6e63;
         }
-        .w_88_x_1np:focus {
-            border-color: #d17c24;
-            background: radial-gradient(circle at 50% 50%, #291804 0%, #000000 100%);
-            color: #ffdeb3;
-            text-shadow: 2px 0 1px rgba(255,0,0,0.6), -2px 0 1px rgba(0,0,255,0.6), 0 0 25px rgba(255, 184, 77, 1);
+        .banana-button {
+            background-color: #fbef42;
+            border: 2px solid #333;
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: transform 0.2s;
         }
-        @keyframes k_zr0 {
-            0% { opacity: 0.7; filter: drop-shadow(0 0 2px rgba(138,58,58,0.2)); }
-            5% { opacity: 0.3; transform: translate(1px, -1px); } 
-            7% { opacity: 0.8; transform: translate(0, 0); }
-            10% { opacity: 0.9; filter: drop-shadow(0 0 5px rgba(138,58,58,0.4)); }
-            12% { opacity: 0.4; transform: translate(-1px, 1px) scaleY(1.02); } 
-            14% { opacity: 0.9; transform: translate(0, 0) scaleY(1); }
-            50% { opacity: 0.85; }
-            100% { opacity: 0.8; filter: drop-shadow(0 0 3px rgba(138,58,58,0.3)); }
+        .banana-button:hover {
+            transform: scale(1.2) rotate(5deg);
+            background-color: #fff100;
         }
-        .v1d_n3xus {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100vw; height: 100vh;
-            background: rgba(0,0,0,0.98);
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            animation: f4d3_1n 1.5s ease forwards;
-            transform: translateZ(0);
-        }
-        .s_f0rm {
-            background: #050202; 
-            padding: 40px; 
-            border: 3px solid #1a0808; 
-            color: #a44; 
-            font-family: monospace; 
-            max-width: 800px; 
-            width: 90vw; 
-            text-align: left;
-            box-shadow: 0 0 30px rgba(138,58,58,0.1);
-            position: relative;
-            text-shadow: 1px 0 1px rgba(255,0,0,0.5), -1px 0 1px rgba(0,0,255,0.5);
-            transform: translateZ(0);
-        }
-        .s_f0rm p { margin-bottom: 10px; font-size: 1.3rem; letter-spacing: 1px; }
-        .s_f0rm input[type="text"], .s_f0rm select {
-            background: #100; color: #ffb84d; border: 1px solid #511; 
-            padding: 10px; width: 100%; font-family: monospace; outline: none; 
-            font-size: 1.2rem; margin-bottom: 25px;
-        }
-        .s_f0rm button { 
-            background: #100; color: #d33; border: 2px solid #511; 
-            padding: 12px 25px; cursor: pointer; margin-top: 10px; 
-            font-family: monospace; letter-spacing: 2px; transition: 0.2s;
-            font-size: 1.2rem; width: 100%;
-        }
-        .s_f0rm button:hover { background: #300; color: #f55; box-shadow: 0 0 20px #f00; }
-        @keyframes f4d3_1n {
-            from { opacity: 0; filter: blur(15px); }
-            to { opacity: 1; filter: blur(0px); }
-        }
-        @keyframes pul5e {
-            0% { box-shadow: 0 0 10px #000; transform: scale(0.98); }
-            100% { box-shadow: 0 0 30px #200; transform: scale(1.02); }
+        img {
+            width: 150px;
+            margin: 20px;
         }
     </style>
 </head>
-<body class="x7q_p9" id="m41n_sys">
-    <div class="flare_overlay"></div>
-    <div class="crt_overlay"></div>
-    
-    <svg class="shattered_screen" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <path d="M10,0 L30,40 L60,20 L80,50 L100,10" />
-        <path d="M0,30 L40,60 L50,90" />
-        <path d="M30,40 L20,80 L40,100" />
-        <path d="M60,20 L75,100" />
-        <path d="M80,50 L100,70" />
-        <path d="M30,40 L50,55 L80,50" />
-    </svg>
+<body>
 
-    <div class="_v01d_w">
-        <input type="password" class="w_88_x_1np" id="k3y_h0l3" autocomplete="off" spellcheck="false" autofocus>
+    <div class="container">
+        <h1>🍌 THE BANANA ZONE 🍌</h1>
+        <p><i>"Orange" you glad I didn't say... well, you know.</i></p>
+        
+        <hr>
+
+        <h3>Why Bananas are Superior:</h3>
+        <ul style="text-align: left; display: inline-block;">
+            <li>They come with their own biodegradable wrapper.</li>
+            <li>They are technically berries (mind = blown).</li>
+            <li>They have high "appeal."</li>
+            <li>If you drop one, it's a comedic goldmine.</li>
+        </ul>
+
+        <div id="joke-area">
+            <p id="joke-text">Click the banana for a potassium boost!</p>
+        </div>
+
+        <button class="banana-button" onclick="revealJoke()">🍌 PRESS ME 🍌</button>
+
+        <p style="margin-top: 40px; font-size: 12px;">
+            Warning: This website may cause sudden urges to make bread.
+        </p>
     </div>
 
-    <div class="v1d_n3xus" id="p0rt4l"></div>
-
     <script>
-        const _dx = s => s.match(/.{2}/g).map(c => String.fromCharCode(parseInt(c, 16))).join('');
-        const b0dy = document.getElementById('m41n_sys');
-        const _1np = document.getElementById('k3y_h0l3');
-        const p0rt = document.getElementById('p0rt4l');
-
-        function tr1gg3rP4n1c(e) { e.preventDefault(); }
-
-        _1np.addEventListener('input', (e) => {
-            const _v = e.target.value.toLowerCase().trim();
-
-            if (_v === _dx("31343838373532353634333336383533303632")) {
-                _1np.blur();
-                p0rt.style.display = 'flex';
-                p0rt.innerHTML = `
-                    <div class="s_f0rm" style="text-align:center;">
-                        <div style="width:120px;height:120px;background:#030000;border-radius:50%;margin:0 auto 30px;animation:pul5e 2s infinite alternate;border:1px solid #200;" id="drk_obj"></div>
-                        <p>${_dx("5748415420495320594f555220464952535420464541543f")}</p>
-                        <input type="text" id="q1" autocomplete="off">
-                        <p>${_dx("5748415420495320594f5552205345434f4e4420464541543f")}</p>
-                        <input type="text" id="q2" autocomplete="off">
-                        <p>${_dx("5748415420495320544849524420464541543f")}</p>
-                        <input type="text" id="q3" autocomplete="off">
-                        <button id="fr_btn">${_dx("5355424d4954")}</button>
-                    </div>
-                `;
-                
-                document.getElementById('fr_btn').onclick = () => {
-                    let a1 = document.getElementById('q1').value.toLowerCase().trim();
-                    let a2 = document.getElementById('q2').value.toLowerCase().trim();
-                    let a3 = document.getElementById('q3').value.toLowerCase().trim();
-                    
-                    if (a1 === _dx("6c69676874") && a2 === _dx("64657465726d696e6174696f6e") && a3 === _dx("7465616d776f726b")) {
-                        p0rt.innerHTML = "";
-                        p0rt.style.transition = "background 2s ease";
-                        p0rt.style.background = "#ffffff";
-                        
-                        setTimeout(() => {
-                            p0rt.innerHTML = `<h1 style="color:#000;font-family:monospace;font-size:2vw;text-align:center;padding:50px;animation: f4d3_1n 2s ease;max-width:80vw;">${_dx("54686520666561747320796f752061636869657665642074687573206661722e2e2e796f7520617265206e6f7720776f7274687920746f2070726f636c61696d20616761696e7374207468652073656372657461726965732c207468617420796f7520617265206e6f77206120726967687466756c20534156494f52")}</h1>`;
-                        }, 3000);
-                    } else {
-                        p0rt.innerHTML = `<h1 style="color:#d33;font-family:monospace;letter-spacing:5px;">${_dx("494e434f52524543542e")}</h1>`;
-                        setTimeout(()=> { p0rt.style.display='none'; p0rt.innerHTML=''; _1np.value=''; _1np.focus(); }, 1500);
-                    }
-                };
-                return;
-            }
-
-            if (_v === _dx("7375727665795f70726f6772616d")) {
-                _1np.blur();
-                p0rt.style.display = 'flex';
-                p0rt.innerHTML = `
-                    <div class="s_f0rm" style="max-width: 900px;">
-                        <p>${_dx("576869636820646179206f6620746865207765656b2077617320746865206669727374206d657373616765206f662044656c7461636f72642073656e74206f6e3f")}</p>
-                        <select id="s1">
-                            <option value="monday">${_dx("4d6f6e646179")}</option>
-                            <option value="tuesday">${_dx("54756573646179")}</option>
-                            <option value="thursday">${_dx("5468757273646179")}</option>
-                            <option value="sunday">${_dx("53756e646179")}</option>
-                        </select>
-                        <p>${_dx("486f77206d616e792063686172616374657220726f6c657320617265206f627461696e61626c6520666f7220746865206176657261676520757365723f")}</p>
-                        <select id="s2">
-                            <option value="12">12</option>
-                            <option value="20">20</option>
-                            <option value="35">35</option>
-                            <option value="50">50</option>
-                        </select>
-                        <p>${_dx("486f77206d616e792072756c6573206172652063757272656e746c7920696e207468652072756c6573206368616e6e656c3f")}</p>
-                        <select id="s3">
-                            <option value="5">5</option>
-                            <option value="8">8</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                        </select>
-                        <p>${_dx("446f20796f75207769736820746f2073746f702074686520676f6e65722d6669636174696f6e206f66207468697320706c6163653f")}</p>
-                        <select id="s4">
-                            <option value="yes">${_dx("596573")}</option>
-                            <option value="no">${_dx("4e6f")}</option>
-                        </select>
-                        <button id="s_btn">${_dx("5355424d4954")}</button>
-                    </div>
-                `;
-                
-                document.getElementById('s_btn').onclick = () => {
-                    let v1 = document.getElementById('s1').value;
-                    let v2 = document.getElementById('s2').value;
-                    let v3 = document.getElementById('s3').value;
-                    let v4 = document.getElementById('s4').value;
-                    
-                    if (v1 === _dx("7468757273646179") && v2 === _dx("3335") && v3 === _dx("3131") && v4 === _dx("796573")) {
-                        p0rt.style.transition = "background 0.5s ease";
-                        p0rt.style.background = "#ffffff";
-                        p0rt.innerHTML = `<h1 style="color:#000;font-family:monospace;font-size:4vw;letter-spacing:5px;animation: f4d3_1n 1s ease;">${_dx("594f552041524520574f52544859")}</h1>`;
-                    } else {
-                        p0rt.style.transition = "background 0.5s ease";
-                        p0rt.style.background = "#000000";
-                        p0rt.innerHTML = `<h1 style="color:#ff0000;font-family:monospace;font-size:4vw;letter-spacing:5px;animation: f4d3_1n 1s ease;">${_dx("594f552041524520554e574f52544859")}</h1>`;
-                        setTimeout(() => {
-                            window.location.href = _dx("68747470733a2f2f7777772e77616c6d6172742e636f6d");
-                        }, 2500);
-                    }
-                };
-            }
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if ((e.ctrlKey && e.key.toLowerCase() === 'u') ||
-                (e.metaKey && e.altKey && e.key.toLowerCase() === 'u') ||
-                e.key === 'F12' ||
-                (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') ||
-                (e.metaKey && e.altKey && e.key.toLowerCase() === 'i') ||
-                (e.ctrlKey && e.key.toLowerCase() === 'a') ||
-                (e.metaKey && e.key.toLowerCase() === 'a')) {
-                tr1gg3rP4n1c(e);
-            }
-        });
-
-        document.addEventListener('contextmenu', function(e) {
-            tr1gg3rP4n1c(e);
-        });
-
-        document.addEventListener('mousedown', function(e) {
-            if (e.button === 2) {
-                tr1gg3rP4n1c(e);
-            }
-        });
+        function revealJoke() {
+            const jokes = [
+                "What is a banana's favorite gymnastic move? The splits!",
+                "Why did the banana go to the doctor? It wasn't peeling well.",
+                "What do you call a charismatic banana? A banana-smoothie.",
+                "How do bananas say hello? 'Yellow!'"
+            ];
+            const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+            document.getElementById('joke-text').innerHTML = "<strong>" + randomJoke + "</strong>";
+            document.body.style.backgroundColor = (document.body.style.backgroundColor === 'rgb(255, 225, 53)') ? '#d4ee5e' : '#FFE135';
+        }
     </script>
+
 </body>
 </html>
