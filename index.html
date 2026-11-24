@@ -85,10 +85,27 @@
     }
 
     header {
+      position: relative;
       text-align: center;
       margin-bottom: 24px;
       padding-bottom: 24px;
       border-bottom: 1px solid var(--border);
+    }
+
+    .blub-link {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: inline-block;
+      line-height: 0;
+      z-index: 2;
+    }
+
+    .blub-img {
+      width: max(128px, 10vw);
+      height: max(128px, 10vw);
+      image-rendering: pixelated;
+      display: block;
     }
 
     .avatar {
@@ -374,6 +391,14 @@
       <a href="https://github.com/discord-unspy/discord-unspy">Discord Unspy</a> - 
       <a href="https://codeberg.org/ashleyirispuppy/transdows11">transdows11</a> 
     </div>
+
+    <a href="https://blub.wiki" class="blub-link">
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAJ1BMVEUAAACi0PJ5wfNmt+5i0PNw3/CO5vS38fp3cL1iVp6Ry/Oy1/LF3vL7XxzmAAAAAXRSTlMAQObYZgAAAFdJREFUeNqNz0EOwCAIBMCCgCL8/701pauXHjqHJdkEEq5/MqMColEFUJMKINaKVwY9InFiclt4xt6ogukUBYW68+KOq6YiY4iooTDTxewUe5beMb8evQH8CwHze/q2WAAAAABJRU5ErkJggg=="
+        alt="blub.wiki"
+        class="blub-img"
+      >
+    </a>
   </header>
 
   <section class="bio-section">
